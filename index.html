@@ -1,50 +1,461 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>EmberConf 2017: Engines as an App Platform</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Printing and PDF exports -->
+    <script>
+     var link = document.createElement( 'link' );
+     link.rel = 'stylesheet';
+     link.type = 'text/css';
+     link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+     document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+	<section>
+          <h2>Engines as an Application Platform</h2>
+          <h4 style="color:#cd6600;">Scaling Engine Development</h4>
+          <aside class="notes">
+            Great material out there on getting your project set up for engines.
+            But getting Engines working in your app is just the start of your journey.
+            We have a large ember app that runs a wide variety of applications.
+            Our challenges are less performance/scale, and more procedural and cultural
+          </aside>
+        </section>
+        <section>
+          <section>Engines Made Ember Win For Us</section>
+          <section>
+            <img class="fragment" alt="" style="position:absolute;height:700px;width:1000px;max-height:900px;z-index:10;border-width:0;" src="images/heart-frame.png"/>
+            <img class="fragment fade-out" style="position:relative;top:200px;border-width:0;" alt="" src="images/angular.svg" height="300px"/>
+            <img alt=""  style="position:relative;top:200px;border-width:0;" src="images/emberjs.png" height="300px"/>
+            <img class="fragment fade-out" style="position:relative;top:200px;border-width:0;" alt="" src="images/knockoutjs.jpg" height="300px"/>
+          </section>
+        <section>
+          <ul>
+            <li>Autonomy</li>
+            <li class="fragment">Namespacing</li>
+            <li class="fragment">Service Sharing</li>
+            <li class="fragment">Lazy Loading</li>
+            <li class="fragment">Technical Consistency</li>
+          </ul>
+          <aside class="notes">
+            This is stuff you get with Engines out of the box.
+            <h2>Autonomy</h2>
+            Each team gits their own repo, can apply their own rules
+            Engines use their own git flow
+          </aside>
+        </section>
+        </section>
+        <section>But Winning Was Just the Beginning...</section>
+        
+	<section>
+          <h2>About Me</h2>
+          <div style="text-align:left;margin-left:100px;">
+            <div class="fragment fade-right">
+              <img style="display:inline;position:relative;top:40px;"
+                   alt="LTS Tomster"
+                   height="100"
+                   src="http://emberjs.com/images/tomsters/lts-8974c71c.png"/>
+              <p style="display:inline;">Senior Dev at Genesys</p>
+            </div>
+            <div class="fragment fade-right">
+              <img style="display:inline;position:relative;top:40px;"
+                   alt="Ember Learn Team Tomster"
+                   height="100"
+                   src="http://emberjs.com/images/tomsters/teaching-c05e27c7.png"/>
+              <p style="display:inline;">Ember Learn Team</p>
+            </div>
+            <div class="fragment fade-right">
+              <img style="display:inline;position:relative;top:40px;"
+                   alt="Triangle Ember Meetup Tomster"
+                   height="100"
+                   src="http://emberjs.com/images/tomsters/raleigh-0ad20d67.png"/>
+              <p style="display:inline;">Triangle Ember Meetup Organizer</p>
+            </div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+          </div>
+        </section>
+        <section>
+          <h2>About Us</h2>
+          <!-- Fish Food Chain -->
+          <aside class="notes">
+            Describe briefly our story.
+            <ul>
+              <li>Cloud Based Customer Service Software</li>
+              <li>Started as a very small startup doing Ember</li>
+              <li>Acquired by a medium sized company doing Angular and Knockout</li>
+              <li>We were a cloud based Directory Integrator app with realtime collaboration</li>
+              <li>They had a app suite of customer service software</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h4>Orgspan pre Ember 1.0</h4>
+          <img src="images/orgspan.png" height="500px"/>
+        </section>
+        <section>
+        <section>
+          <h4>The Genesys PureCloud Application Platform</h4>
+          <img src="images/inin.png" height="500px"/>
+          <aside class="notes">
+            The same app exists today, but has become the UI shell to our whole customer service product suite.
+          </aside>
+        </section>
+        <section>
+          <p class="fragment">Top menu items are routable</p>
+          <p style="position:fixed;left:-270px;top:300px;transform:rotate(270deg);" class="fragment">Side menu items are built-in</p>
+          <img alt="" src="images/queues.png" height="500px"/>
+          <aside class="notes">
+            <ul>
+              <li>The top menu is routable apps (engines)</li>
+              <li>While the side menu are capabilities you have built into the platform</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <img alt="" src="images/interaction-engine.png" height="500px"/>
+        </section>
+        <section>
+          <img alt="" src="images/admin-engine.png" height="500px"/>
+        </section>
+        </section>
+        <section>
+          <h2>Some Stats</h2>
+          <p class="fragment"><span class="big-number">50+</span> Developers</p>
+          <p class="fragment"><span class="big-number">10</span> Engines (and counting!)</p>
+          <p class="fragment"><span class="big-number">2-4</span> Deployments/Month</p>
+        </section>
+        <section data-background="http://i.giphy.com/Rl9Yqavfj2Ula.gif">
+             <h2>Easy, Right?</h2>
+        </section>
+        <section data-background="http://i.giphy.com/3Q8Q4NJPKbdkc.gif">
+          <h2>But...</h2>
+          <aside class="notes" data-markdown>
+            ### Engines get you on the road to doing it well,
+            but you still have to figure some things out as a UI organization.
+          </aside>
+        </section>
+        <section data-background="http://i.giphy.com/cMVgEhDeKzPwI.gif">
+          <h2>...There were Questions</h2>
+        </section>
+        <section data-background="http://i.giphy.com/AqpK7kiHuXApW.gif">
+          <h2 style="color:black;">How To Avoid Breaking Each Other?</h2>
+          <aside class="notes" data-markdown>
+            ### The crux of most of our technical challenges
+          </aside>
+        </section>
+        <section data-background="http://i.giphy.com/xT1XGCi4pKLl2DZeQE.gif">
+          <h2>Managing Dependencies</h2>
+          <aside class="notes" data-markdown>
+            * Keep versions in sync (dependency-lint)</li>
+            * Adhere to Semver</li>
+            * Keep NPM happy</li>
+            * Yarn?</li>
+          </aside>
+        </section>
+        <section>
+        <section>
+          <h3>Semantic Versioning + Communication = Love</h3>
+          <p class="fragment">...or at least not killing each other</p>
+          <img class="fragment" src="https://media.giphy.com/media/2e15prz6C7bWw/giphy.gif"/>
+        </section>
+        <section>
+          <ul>
+            <li>Prefer `^` for dependencies (Except Ember)</li>
+            <li class="fragment">Major dependency bumps propagate up, that way the parent is in control</li>
+            <li class="fragment">Lint your dependencies - ember-cli-dependency-lint</li>
+            <li class="fragment">Make addon dependencies public</li>
+            <li class="fragment">Mind your broccoli</li>
+          </ul>
+          <aside class="notes" data-markdown>
+            * We always want the parent to be in control to avoid breaks from children.
+            * Making addon dependecies public prevent the parent from having to explicitly depend on child dependencies
+            * Ember CLI treeFor tasks can't assume an NPM Tree.  When new dependencies and engines get added it can change the whole tree.
+          </aside>
+        </section>
+        </section>
+        <section>
+        <section>
+          <h2>Upgrading Ember</h2>
+          <aside class="notes" data-markdown>
+            * Upgrading's a big deal when you have a ton of engines that need to be in sync
+            * Deprecation Workflow
+            * Upgrade Branch
+            * Engine Upgrades
+            * Ember Try
+          </aside>
+        </section>
+        <section>
+          <ul>
+            <li>Keep an Ember Upgrade Branch</li>
+            <li class="fragment">Engines should run ember-try against release and beta (at least)</li>
+            <li class="fragment">Gated by tests</li>
+            <li class="fragment">Approvals from Engine Owners</li>
+          </ul>
+        </section>
+        <section>
+          We're realizing that keeping up with the beta can make Ember more semver compliant
+        </section>
+        </section>
+        <section>
+        <section data-background="http://i.giphy.com/Ijla78AmdP3mE.gif">
+          <h3>How Do We Share?</h3>
+          <aside class="notes">
+            <ul>
+              <li>Common Addons</li>
+              <li>How to "Share Up" less/sass common variables(blog post?)</li>
+              <li>Single vs Separate</li>
+              <li>Services - you can share services from the parent, but you lose out on testing locally that way</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h3>Common Addons</h3>
+          <p>Components - Assets - Services</p>
+          <p class="fragment">Prefer common to shared</p>
+        </section>
+        <section>
+          <h3>Splitting Addons</h3>
+          <p class="fragment">Modularity vs Simplicity</p>
+          <div style="display:flex;">
+          <div class="fragment" style="flex-grow:1;">
+            <p style="font-size: 20px"><em>Public Addons</em></p>
+            <ul style="font-size: 15px;">
+              <li>ember-webrtc-devices</li>
+              <li>ember-webrtc-troubleshoot</li>
+              <li>ember-data-visualizations</li>
+              <li>fixtable-ember</li>
+            </ul>
+          </div>
+          <div class="fragment" style="flex-grow:1;">
+            <p style="font-size: 20px"><em>Major Addons</em></p>
+            <ul style="font-size: 15px;">
+              <li>ember-chat-components</li>
+            </ul>
+          </div>
+          <div class="fragment" style="flex-grow:1;">
+            <p style="font-size: 20px"><em>Basic Asset Addons</em></p>
+            <ul style="font-size: 15px;">
+              <li>ember-purecloud-style</li>
+            </ul>
+          </div>
+          <div class="fragment" style="flex-grow:1;">
+            <p style="font-size: 20px"><em>Suites</em></p>
+            <ul style="font-size: 15px;">
+              <li>ember-purecloud-components</li>
+              <li>ember-engage-components</li>
+            </ul>
+          </div>
+          </div>
+        </section>
+        </section>
+        <section>
+        <section data-background="http://i.giphy.com/h8zDn6oE4TLfq.gif">
+          <h2>How Do We Test?</h2>
+          <aside class="notes">
+            * Push as much as possible to individual Engines
+            * Super important in a continuously deploying environment
+            * We wanted to push as much to the individual engine teams as possible.
+            * Reduces the time it takes to run the app tests, and adds another quality
+              check to the engine that it can exercise before a version bump.
+          </aside>
+        </section>
+        <section>
+          <h3>Push Tests To Engines and Addons</h3>
+          <p class="fragment">Distributes load</p>
+          <p class="fragment">Keeps teams accountable</p>
+          <p class="fragment">Gates Version Bumps</p>
+        </section>
+        <section>
+          <h3>Adhere to the Test Pyramid</h3>
+          <img alt="" src="images/test-pyramid.png"/>
+          <p><a href="https://martinfowler.com/bliki/TestPyramid.html" style="font-size:10px">https://martinfowler.com/bliki/TestPyramid.html</a></p>
+        </section>
+        <section>
+          <h3>Fight For Stability</h3>
+          <p class="fragment">Async Cleanup</p>
+          <p class="fragment">AutRun in tests</p>
+          <p class="fragment">Globals</p>
+          <p class="fragment">Sets in render</p>
+          <p class="fragment">SPEEEED</p>
+        </section>
+        </section>
+        <section>
+          <section data-background="https://media.giphy.com/media/143vPc6b08locw/giphy.gif">
+          <h2>How Do We Build and Deploy?</h2>
+        </section>
+        <section>
+          <p>Each Engine/Addon/App should have its Own</p>
+          <div style="display:flex">
+            <div class="fragment" style="flex-grow:1;">
+              <p style="font-size:20px;"><em>Git Flow</em></p>
+              <ul style="font-size:15px">
+                <li>feature branch</li>
+                <li>develop</li>
+                <li>release</li>
+                <li>master - ship</li>
+              </ul>
+            </div>
+            <div class="fragment" style="flex-grow:1;">
+              <p style="font-size:20px;"><em>Automation Gates</em></p>
+              <ul style="font-size:15px">
+                <li>Ember suite breaks builds</li>
+                <li>E2E automation gates it</li>
+              </ul>
+            </div>
+            <div class="fragment" style="flex-grow:1;">
+              <p style="font-size:20px;"><em>Deploy</em></p>
+              <ul style="font-size:15px">
+                <li>Each Branch gets deployed</li>
+                <li>"Time Machine" builds for feature branches</li>
+                <li>NPM Publish for Engines</li>
+                <li>Prod for App Master</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        </section>
+        <!-- <section>
+             <h2>Unified Common Services</h2>
+             <p class="fragment">Internationalization</p>
+             <p class="fragment">Security</p>
+             <p class="fragment">Logging</p>
+             <aside class="notes">
+             * ember-intl -
+             * ember-simple-auth
+             * sumo
+             * analytics
+             </aside>
+             </section> -->
+        <section>
+          <h2>How Do We Handle the Future?</h2>
+          <p class="fragment">Patching Engines</p>
+          <p class="fragment">Managing Size</p>
+          <p class="fragment">Ease of Deployment</p>
+          <p class="fragment">Third Party Apps</p>
+          <p class="fragment">Managing Outages</p>
+        </section>
+        <section data-background="http://i.giphy.com/sXOj0wtpyELdu.gif">
+          <h2>Cultural Questions</h2>
+        </section>
+        <section>
+          <h3>How Do We Communicate Across Diverse, Global Teams?</h3>
+        </section>
+        <section>
+        <section>
+          <h3>EmberJS Chat Channel</h3>
+          <img alt="" src="images/ember-chat.gif" height="500"/>
+          <aside class="notes">
+            * Each Team has their own channel
+            * Every team is on the EmberJS Channel
+          </aside>
+        </section>
+        <section>
+          <ul>
+            <li>Always Answer Questions</li>
+            <li>Share Links and New Stuff</li>
+            <li>Pitch Ideas</li>
+            <li>Garner Reviews</li>
+            <li>Gifs</li>
+          </ul>
+        </section>
+        <section>
+          <img alt="" src="https://media.giphy.com/media/jP1S3lEw9aRuE/giphy.gif" height="400px"/>
+        </section>
+        </section>
+        <section>
+        <section>
+          <h3>Best Practice Series</h3>
+          <img alt="" src="images/ember-best-practices.gif" height="500"/>
+        </section>
+        <section>
+          <h3>Topics So Far</h3>
+          <ul>
+            <li>Components</li>
+            <li>Addon Development</li>
+            <li>Engines</li>
+            <li>Testing</li>
+            <li>Ember Data</li>
+            <li>NPM and Semver</li>
+            <li>Build and Deploy</li>
+            <li>The Run Loop</li>
+          </ul>
+        </section>
+        </section>
+        <section>
+        <section>
+          <h3>Internal RFC Process</h3>
+          <p class="fragment">Ripped from Ember <3</p>
+          <img alt="" src="images/rfc-process.gif" height="500px"/>
+        </section>
+        <section>
+          <h3>For Best Practices, Services, Tech Processes</h3>
+          <ul>
+            <li>Document</li>
+            <li>Publicize</li>
+            <li>Buy-in</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Things We Use it For</h3>
+          <ul>
+            <li>Strategies(Testing, Upgrades)</li>
+            <li>New Tooling(introducing mirage, concurrency, etc)</li>
+          </ul>
+        </section>
+        </section>
+        <section>
+          <h3>Documentation of APIs, Usage</h3>
+          <p class="fragment">Inspired from last EmberConf \o/</p>
+          <img alt="" src="images/living-style-guide.gif" height="450px"/>
+        </section>
+        <section>
+          <h3>Creating a Culture Contribution</h3>
+          <ul>
+            <li class="fragment">Core Team</li>
+            <li class="fragment">Task Board</li>
+            <li class="fragment">Detailed Tasks</li>
+            <li class="fragment">Help Wanted Tags</li>
+          </ul>
+          <aside class="notes" data-markdown>
+            * Learned some tips from my OSS Experience
+            * Not going to get 100%, but make it easier for people that are motivated
+            * Senior engineers set the tone
+            * Continuous Delivery helps
+          </aside>
+        </section>
+        <section data-background="http://i.giphy.com/OHZ1gSUThmEso.gif">Thanks!</section>
+      </div>
+    </div>
 
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+    <script>
+     // More info https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+       history: true,
+
+       // More info https://github.com/hakimel/reveal.js#dependencies
+       dependencies: [
+	 { src: 'plugin/markdown/marked.js' },
+	 { src: 'plugin/markdown/markdown.js' },
+	 { src: 'plugin/notes/notes.js', async: true },
+	 { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+       ]
+     });
+    </script>
+  </body>
 </html>
