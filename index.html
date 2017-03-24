@@ -27,11 +27,11 @@
 	<section>
           <h2>Engines as an Application Platform</h2>
           <h4 style="color:#cd6600;">Scaling Engine Development</h4>
-          <aside class="notes">
-            Great material out there on getting your project set up for engines.
-            But getting Engines working in your app is just the start of your journey.
-            We have a large ember app that runs a wide variety of applications.
-            Our challenges are less performance/scale, and more procedural and cultural
+          <aside class="notes" data-markdown>
+            * Great material out there on getting your project set up for engines.
+            * But getting Engines working in your app is just the start of your journey.
+            * We have a large ember app that runs a wide variety of applications.
+            * Our challenges are not only performance/scale, but also and even moreso procedural and cultural
           </aside>
         </section>
         <section>
@@ -67,21 +67,21 @@
               <img style="display:inline;position:relative;top:40px;"
                    alt="LTS Tomster"
                    height="100"
-                   src="http://emberjs.com/images/tomsters/lts-8974c71c.png"/>
+                   src="images/lts-tomster.png"/>
               <p style="display:inline;">Senior Dev at Genesys</p>
             </div>
             <div class="fragment fade-right">
               <img style="display:inline;position:relative;top:40px;"
                    alt="Ember Learn Team Tomster"
                    height="100"
-                   src="http://emberjs.com/images/tomsters/teaching-c05e27c7.png"/>
+                   src="images/teaching-tomster.png"/>
               <p style="display:inline;">Ember Learn Team</p>
             </div>
             <div class="fragment fade-right">
               <img style="display:inline;position:relative;top:40px;"
                    alt="Triangle Ember Meetup Tomster"
                    height="100"
-                   src="http://emberjs.com/images/tomsters/raleigh-0ad20d67.png"/>
+                   src="images/sir-walter-tomster.png"/>
               <p style="display:inline;">Triangle Ember Meetup Organizer</p>
             </div>
 
@@ -137,26 +137,26 @@
           <p class="fragment"><span class="big-number">10</span> Engines (and counting!)</p>
           <p class="fragment"><span class="big-number">2-4</span> Deployments/Month</p>
         </section>
-        <section data-background="http://i.giphy.com/Rl9Yqavfj2Ula.gif">
+        <section data-background="images/easy-button.gif">
              <h2>Easy, Right?</h2>
         </section>
-        <section data-background="http://i.giphy.com/3Q8Q4NJPKbdkc.gif">
+        <section data-background="images/hold-onto-your-butts.gif">
           <h2>But...</h2>
           <aside class="notes" data-markdown>
             ### Engines get you on the road to doing it well,
             but you still have to figure some things out as a UI organization.
           </aside>
         </section>
-        <section data-background="http://i.giphy.com/cMVgEhDeKzPwI.gif">
+        <section data-background="images/wut-wut-wut.gif">
           <h2>...There were Questions</h2>
         </section>
-        <section data-background="http://i.giphy.com/AqpK7kiHuXApW.gif">
+        <section data-background="images/forklift-jenga.gif">
           <h2 style="color:black;">How To Avoid Breaking Each Other?</h2>
           <aside class="notes" data-markdown>
             ### The crux of most of our technical challenges
           </aside>
         </section>
-        <section data-background="http://i.giphy.com/xT1XGCi4pKLl2DZeQE.gif">
+        <section data-background="images/ughhh.gif">
           <h2>Managing Dependencies</h2>
           <aside class="notes" data-markdown>
             * Keep versions in sync (dependency-lint)</li>
@@ -169,7 +169,7 @@
         <section>
           <h3>Semantic Versioning + Communication = Love</h3>
           <p class="fragment">...or at least not killing each other</p>
-          <img class="fragment" src="https://media.giphy.com/media/2e15prz6C7bWw/giphy.gif"/>
+          <img class="fragment" src="images/cross-billy-off-the-list.gif"/>
         </section>
         <section>
           <ul>
@@ -210,7 +210,7 @@
         </section>
         </section>
         <section>
-        <section data-background="http://i.giphy.com/Ijla78AmdP3mE.gif">
+        <section data-background="images/cute-sharing.gif">
           <h3>How Do We Share?</h3>
           <aside class="notes">
             <ul>
@@ -262,7 +262,7 @@
         </section>
         </section>
         <section>
-        <section data-background="http://i.giphy.com/h8zDn6oE4TLfq.gif">
+        <section data-background="images/beaker-testing.gif">
           <h2>How Do We Test?</h2>
           <aside class="notes">
             * Push as much as possible to individual Engines
@@ -293,7 +293,7 @@
         </section>
         </section>
         <section>
-          <section data-background="https://media.giphy.com/media/143vPc6b08locw/giphy.gif">
+          <section data-background="images/shipit.gif">
           <h2>How Do We Build and Deploy?</h2>
         </section>
         <section>
@@ -304,7 +304,7 @@
               <ul style="font-size:15px">
                 <li>feature branch</li>
                 <li>develop</li>
-                <li>release</li>
+                <li>release - yarn-locked</li>
                 <li>master - ship</li>
               </ul>
             </div>
@@ -347,7 +347,7 @@
           <p class="fragment">Third Party Apps</p>
           <p class="fragment">Managing Outages</p>
         </section>
-        <section data-background="http://i.giphy.com/sXOj0wtpyELdu.gif">
+        <section data-background="images/herding-cats.gif">
           <h2>Cultural Questions</h2>
         </section>
         <section>
@@ -357,22 +357,20 @@
         <section>
           <h3>EmberJS Chat Channel</h3>
           <img alt="" src="images/ember-chat.gif" height="500"/>
-          <aside class="notes">
+          <aside class="notes" data-markdown>
             * Each Team has their own channel
             * Every team is on the EmberJS Channel
           </aside>
         </section>
-        <section>
-          <ul>
-            <li>Always Answer Questions</li>
-            <li>Share Links and New Stuff</li>
-            <li>Pitch Ideas</li>
-            <li>Garner Reviews</li>
-            <li>Gifs</li>
-          </ul>
+        <section data-markdown>
+          * Always Answer Questions
+          * Share Links and New Stuff
+          * Pitch Ideas
+          * Garner Reviews
+          * Gifs
         </section>
         <section>
-          <img alt="" src="https://media.giphy.com/media/jP1S3lEw9aRuE/giphy.gif" height="400px"/>
+          <img alt="" src="images/you-scratch-my-back.gif" height="400px"/>
         </section>
         </section>
         <section>
@@ -380,40 +378,37 @@
           <h3>Best Practice Series</h3>
           <img alt="" src="images/ember-best-practices.gif" height="500"/>
         </section>
-        <section>
-          <h3>Topics So Far</h3>
-          <ul>
-            <li>Components</li>
-            <li>Addon Development</li>
-            <li>Engines</li>
-            <li>Testing</li>
-            <li>Ember Data</li>
-            <li>NPM and Semver</li>
-            <li>Build and Deploy</li>
-            <li>The Run Loop</li>
-          </ul>
+        <section data-markdown>
+          ### Topics So Far
+
+          * Components
+          * Addon Development
+          * Engines
+          * Testing
+          * Ember Data
+          * NPM and Semver
+          * Build and Deploy
+          * The Run Loop
+
         </section>
         </section>
         <section>
         <section>
           <h3>Internal RFC Process</h3>
           <p class="fragment">Ripped from Ember <3</p>
-          <img alt="" src="images/rfc-process.gif" height="500px"/>
+          <img alt="" src="images/rfc-process.gif" height="450px"/>
         </section>
-        <section>
-          <h3>For Best Practices, Services, Tech Processes</h3>
-          <ul>
-            <li>Document</li>
-            <li>Publicize</li>
-            <li>Buy-in</li>
-          </ul>
+        <section data-markdown>
+          * Document
+          * Publicize
+          * Buy-in
         </section>
-        <section>
-          <h3>Things We Use it For</h3>
-          <ul>
-            <li>Strategies(Testing, Upgrades)</li>
-            <li>New Tooling(introducing mirage, concurrency, etc)</li>
-          </ul>
+        <section data-markdown>
+          ### Things We Use it For
+
+          * New Best Practices _(Testing, Upgrades)_
+          * New Tooling _(introducing mirage, concurrency, etc)_
+
         </section>
         </section>
         <section>
@@ -436,7 +431,7 @@
             * Continuous Delivery helps
           </aside>
         </section>
-        <section data-background="http://i.giphy.com/OHZ1gSUThmEso.gif">Thanks!</section>
+        <section data-background="images/breakfast-club-goodbye.gif">Thanks!</section>
       </div>
     </div>
 
