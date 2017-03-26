@@ -28,14 +28,18 @@
           <h2>Engines as an Application Platform</h2>
           <h4 style="color:#cd6600;">Scaling Engine Development</h4>
           <aside class="notes" data-markdown>
-            * Great material out there on getting your project set up for engines.
-            * But getting Engines working in your app is just the start of your journey.
-            * We have a large ember app that runs a wide variety of applications.
-            * Our challenges are not only performance/scale, but also and even moreso procedural and cultural
+            ## Application Platform
+            * A single, cohesive interface that allows you to access multiple applications
+            * Will largely draw upon the experiences we've had using engines to build this out.
           </aside>
         </section>
         <section>
-          <section>Engines Made Ember Win For Us</section>
+          <section>
+            Engines Made Ember Win For Us
+            <aside class="notes">
+
+            </aside>
+          </section>
           <section>
             <img class="fragment" alt="" style="position:absolute;height:700px;width:1000px;max-height:900px;z-index:10;border-width:0;" src="images/heart-frame.png"/>
             <img class="fragment fade-out" style="position:relative;top:200px;border-width:0;" alt="" src="images/angular.svg" height="300px"/>
@@ -59,7 +63,6 @@
         </section>
         </section>
         <section>But Winning Was Just the Beginning...</section>
-        
 	<section>
           <h2>About Me</h2>
           <div style="text-align:left;margin-left:100px;">
@@ -159,17 +162,19 @@
         <section data-background="images/ughhh.gif">
           <h2>Managing Dependencies</h2>
           <aside class="notes" data-markdown>
-            * Keep versions in sync (dependency-lint)</li>
-            * Adhere to Semver</li>
-            * Keep NPM happy</li>
-            * Yarn?</li>
+            One of the biggest causes of breakages when we brought everyone together under one UI.
           </aside>
         </section>
         <section>
         <section>
           <h3>Semantic Versioning + Communication = Love</h3>
           <p class="fragment">...or at least not killing each other</p>
+          <p class="fragment"><a href="http://semver.org">http://semver.org</a></p>
           <img class="fragment" src="images/cross-billy-off-the-list.gif"/>
+          <aside class="notes">
+            ### Many developers don't give it much thought when creating standalone apps.
+            * http://semver.org
+          </aside>
         </section>
         <section>
           <ul>
@@ -177,7 +182,7 @@
             <li class="fragment">Major dependency bumps propagate up, that way the parent is in control</li>
             <li class="fragment">Lint your dependencies - ember-cli-dependency-lint</li>
             <li class="fragment">Make addon dependencies public</li>
-            <li class="fragment">Mind your broccoli</li>
+            <li class="fragment">Mind your broccoli (Who's my parent?)</li>
           </ul>
           <aside class="notes" data-markdown>
             * We always want the parent to be in control to avoid breaks from children.
@@ -190,11 +195,8 @@
         <section>
           <h2>Upgrading Ember</h2>
           <aside class="notes" data-markdown>
+            * No big deal on a minor, right?
             * Upgrading's a big deal when you have a ton of engines that need to be in sync
-            * Deprecation Workflow
-            * Upgrade Branch
-            * Engine Upgrades
-            * Ember Try
           </aside>
         </section>
         <section>
@@ -225,6 +227,12 @@
           <h3>Common Addons</h3>
           <p>Components - Assets - Services</p>
           <p class="fragment">Prefer common to shared</p>
+          <aside class="notes">
+            ### Reasons we prefer common
+            * Tests
+            * Main app simplicity
+            * broader reuse
+          </aside>
         </section>
         <section>
           <h3>Splitting Addons</h3>
@@ -259,33 +267,53 @@
             </ul>
           </div>
           </div>
+          <aside class="notes">
+            ### The tradeoff in splitting addons
+            * few, large addons are simpler for consumers to keep up with, require less dependency concerns
+            * many, small addons promote easier maintenance and fine grained reuse.
+            ### Public Addons
+            * We want public addons to be fine grained, bc we don't know how people will want to use them.
+            * Gives them a more consumable face.
+            ### Major Addons
+            * Have their own teams maintaining them.  May be used outside the main app.
+            ### Suites
+            * "Everything else"
+            * Makes thing shared across the ecosystem
+            * Simplifies dependency management
+          </aside>
         </section>
         </section>
         <section>
         <section data-background="images/beaker-testing.gif">
           <h2>How Do We Test?</h2>
-          <aside class="notes">
-            * Push as much as possible to individual Engines
-            * Super important in a continuously deploying environment
-            * We wanted to push as much to the individual engine teams as possible.
-            * Reduces the time it takes to run the app tests, and adds another quality
-              check to the engine that it can exercise before a version bump.
+          <aside class="notes" data-markdown>
+            ## A Few Options
+            * You can Push as much as possible to individual Engines
+            * You can put everything at the top level
+            * You can do a mix... Acceptance-Top, unit/integration at engines.
           </aside>
         </section>
         <section>
           <h3>Push Tests To Engines and Addons</h3>
           <p class="fragment">Distributes load</p>
           <p class="fragment">Keeps teams accountable</p>
-          <p class="fragment">Gates Version Bumps</p>
+          <p class="fragment">Gates Builds/Version Bumps</p>
+          <aside class="notes" data-markdown>
+            Requires some kind of accomodation for shared services.
+          </aside>
         </section>
         <section>
           <h3>Adhere to the Test Pyramid</h3>
           <img alt="" src="images/test-pyramid.png"/>
           <p><a href="https://martinfowler.com/bliki/TestPyramid.html" style="font-size:10px">https://martinfowler.com/bliki/TestPyramid.html</a></p>
+          <aside class="notes" data-markdown>
+            * Higher level tests tend to require more setup and teardown.
+            * They also can give you feedback later.
+          </aside>
         </section>
         <section>
           <h3>Fight For Stability</h3>
-          <p class="fragment">Async Cleanup</p>
+          <p class="fragment">Async Cleanup (sets on destroyed)</p>
           <p class="fragment">Autorun in tests</p>
           <p class="fragment">Globals</p>
           <p class="fragment">Sets in render</p>
@@ -300,7 +328,7 @@
           <p>Each Engine/Addon/App should have its Own</p>
           <div style="display:flex">
             <div class="fragment" style="flex-grow:1;">
-              <p style="font-size:20px;"><em>Git Flow</em></p>
+              <p style="font-size:20px;"><em>GitFlow</em></p>
               <ul style="font-size:15px">
                 <li>feature branch</li>
                 <li>develop</li>
@@ -319,12 +347,16 @@
               <p style="font-size:20px;"><em>Deploy</em></p>
               <ul style="font-size:15px">
                 <li>Each Branch gets deployed</li>
-                <li>"Time Machine" builds for feature branches</li>
+                <li>"Time Machine" builds</li>
                 <li>NPM Publish for Engines</li>
                 <li>Prod for App Master</li>
               </ul>
             </div>
           </div>
+          <aside class="notes" data-markdown>
+            ### GitFlow
+            http://nvie.com/posts/a-successful-git-branching-model/
+          </aside>
         </section>
         </section>
         <!-- <section>
@@ -368,6 +400,9 @@
           * Pitch Ideas
           * Garner Reviews
           * Gifs
+          <aside class="notes">
+            We want nobody to be on an island
+          </aside>
         </section>
         <section>
           <img alt="" src="images/you-scratch-my-back.gif" height="400px"/>
@@ -431,7 +466,16 @@
             * Continuous Delivery helps
           </aside>
         </section>
-        <section data-background="images/breakfast-club-goodbye.gif">Thanks!</section>
+        <section data-background="images/breakfast-club-goodbye.gif">
+          <h3>Thanks!</h3>
+
+        </section>
+        <section>
+          <p>Twitter: @tddjordan</p>
+          <p>Slack: @todd.jordan</p>
+          <a href="https://toddjordan.github.io/emberconf-engines-as-app-platform/#/">https://toddjordan.github.io/emberconf-engines-as-app-platform/#/</a>
+          
+        </section>
       </div>
     </div>
 
