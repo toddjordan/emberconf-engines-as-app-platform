@@ -351,19 +351,21 @@
               </ul>
             </div>
             <div class="fragment" style="flex-grow:1;">
+              <p style="font-size:20px;"><em>Branch Deployments</em></p>
+              <ul style="font-size:15px">
+                <li>Each Major Branch gets deployed (release, develop, features)</li>
+                <li>Engine branches get deployed for tests</li>
+                <li>Ship: NPM Publish for Engines</li>
+                <li>Ship: S3 Prod Deploy for App Master</li>
+              </ul>
+            </div>
+
+            <div class="fragment" style="flex-grow:1;">
               <p style="font-size:20px;"><em>Automation Gates Promotion</em></p>
               <ul style="font-size:15px">
                 <li>Ember suite breaks builds</li>
-                <li>E2E automation gates it</li>
-              </ul>
-            </div>
-            <div class="fragment" style="flex-grow:1;">
-              <p style="font-size:20px;"><em>Everything Deploys</em></p>
-              <ul style="font-size:15px">
-                <li>Each Branch gets deployed</li>
-                <li>"Time Machine" builds</li>
-                <li>NPM Publish for Engines</li>
-                <li>S3 Prod Deploy for App Master</li>
+                <li>E2E automation gates app to prod</li>
+                <li>E2E automation gates engine to publish</li>
               </ul>
             </div>
           </div>
